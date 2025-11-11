@@ -8,9 +8,13 @@
   <h1>Form Pemeriksaan APAR</h1>
   <p id="apar-info"></p>
 
+  <!-- Iframe tersembunyi untuk submit form -->
+  <iframe name="hidden_iframe" style="display:none;"></iframe>
+
   <form id="checkForm" 
         action="https://script.google.com/macros/s/AKfycbz2cTJl_jXyTgnNcUbG129fX5r9H7ehSt-sSC4kRKX4JMqsL84Ck-wsGqbkXRB8NCZq/exec" 
-        method="post" target="_blank">
+        method="post" target="hidden_iframe" 
+        onsubmit="return formSubmitted();">
 
     <input type="hidden" name="aparId" id="aparId">
     
