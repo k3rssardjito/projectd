@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
   <title>Pemeriksaan APAR</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; max-width: 400px; margin: auto; }
-    label { font-weight: bold; }
-    input, select, button { width: 100%; margin: 8px 0; padding: 8px; }
-    #status { margin-top: 10px; font-weight: bold; }
-    #apar-info { background: #f1f1f1; padding: 10px; border-radius: 6px; margin-bottom: 15px; }
-  </style>
 </head>
 <body>
-  <h2>🧯 Pemeriksaan APAR</h2>
-  <div id="apar-info">Memuat data...</div>
+  <h1>Form Pemeriksaan APAR</h1>
+  <p id="apar-info"></p>
 
-  <form id="checkForm">
-    <label>Tanggal:</label>
-    <input type="date" name="tanggal" required>
+  <form id="checkForm" 
+        action="https://script.google.com/macros/s/AKfycbz2cTJl_jXyTgnNcUbG129fX5r9H7ehSt-sSC4kRKX4JMqsL84Ck-wsGqbkXRB8NCZq/exec" 
+        method="post" target="_blank">
 
-    <label>Kondisi Tekanan:</label>
-    <select name="tekanan" required>
-      <option value="">Pilih...</option>
-      <option>Normal</option>
-      <option>Turun</option>
-      <option>Habis</option>
-    </select>
+    <input type="hidden" name="aparId" id="aparId">
+    
+    <label>Petugas:</label><br>
+    <input type="text" name="petugas" required><br><br>
 
-    <label>Segel:</label>
-    <select name="segel" required>
-      <option value="">Pilih...</option>
-      <option>Utuh</option>
-      <option>Rusak</option>
-    </select>
+    <label>Lokasi:</label><br>
+    <input type="text" name="lokasi" required><br><br>
 
-    <label>Nama Petugas:</label>
-    <input type="text" name="petugas" placeholder="Nama pemeriksa" required>
+    <label>Kondisi:</label><br>
+    <select name="kondisi" required>
+      <option value="Normal">Normal</option>
+      <option value="Perlu Perbaikan">Perlu Perbaikan</option>
+    </select><br><br>
 
-    <button type="submit">✅ Simpan Pemeriksaan</button>
+    <label>Keterangan:</label><br>
+    <textarea name="keterangan"></textarea><br><br>
+
+    <button type="submit">Simpan Pemeriksaan</button>
   </form>
 
   <p id="status"></p>
