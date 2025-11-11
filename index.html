@@ -1,39 +1,16 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scan QR APAR</title>
-  <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
-  <style>
-    body { font-family: sans-serif; text-align: center; margin-top: 40px; }
-    #reader { width: 320px; margin: auto; }
-    #status { margin-top: 10px; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Scanner QR APAR</title>
 </head>
 <body>
-  <h2>📷 Scan QR Code APAR</h2>
-  <div id="reader"></div>
-  <p id="status">Arahkan kamera ke QR code APAR...</p>
+  <h1>Scanner QR APAR</h1>
+  <p>Gunakan HP untuk scan QR code, atau klik link APAR di bawah:</p>
 
-  <script>
-    const html5QrCode = new Html5Qrcode("reader");
-    const status = document.getElementById("status");
-
-    function onScanSuccess(decodedText) {
-      status.textContent = "✅ QR terdeteksi! Membuka halaman...";
-      html5QrCode.stop().then(() => {
-        window.location.href = decodedText;
-      });
-    }
-
-    html5QrCode.start(
-      { facingMode: "environment" },
-      { fps: 10, qrbox: 250 },
-      onScanSuccess
-    ).catch(err => {
-      status.textContent = "❌ Kamera gagal dibuka: " + err;
-    });
-  </script>
+  <ul>
+    <li><a href="check.html?id=APAR-001">APAR-001</a></li>
+    <li><a href="check.html?id=APAR-002">APAR-002</a></li>
+  </ul>
 </body>
 </html>
